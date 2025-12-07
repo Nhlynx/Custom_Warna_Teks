@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas JS 1</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    #teks {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <p id="teks">Wuih, apa ini?</p>
+  <button onclick="ubahWarna()">Ubah Warna</button>
+
+  <script>
+    let sudahDiubah = false;
+
+    function ubahWarna() {
+      const teks = document.getElementById("teks");
+      if (!sudahDiubah) {
+        teks.textContent = "Berubah doang warnanya?";
+        sudahDiubah = true;
+      }
+      const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      teks.style.color = randomColor;
+    }
+  </script>
+</body>
+</html>
